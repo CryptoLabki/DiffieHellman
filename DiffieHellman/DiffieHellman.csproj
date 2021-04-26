@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CommonData.cs" />
+    <Compile Include="DiffieHellman.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="RandomGenerator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

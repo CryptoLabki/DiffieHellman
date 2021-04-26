@@ -7,7 +7,7 @@ using System.Numerics;
 
 namespace DiffieHellman
 {
-    class DiffieHellman
+    public class DiffHellman
     {
         public static BigInteger GetX (BigInteger g, BigInteger x, BigInteger q, BigInteger p)
         {

@@ -5,8 +5,102 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiffieHellman"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="478.8" Width="754.4">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="P" Grid.Column="0" Grid.Row="0"/>
+                <TextBox Name="inputP" Grid.Column="1" Grid.Row="0" Height="auto" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Margin="5" IsReadOnly="True"/>
+
+                <Label Content="q" Grid.Column="0" Grid.Row="1"/>
+                <TextBox Name="inputQ" Grid.Column="1" Grid.Row="1" Height="auto" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Margin="5" IsReadOnly="True"/>
+
+                <Label Content="g" Grid.Column="0" Grid.Row="2"/>
+                <TextBox Name="inputG" Grid.Column="1" Grid.Row="2" Height="auto" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Margin="5" IsReadOnly="True"/>
+
+                <Button Name="btnRefresh" Content="Refresh" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5" Width="100" Height="30" Click="BtnRefresh_Click"/>
+            </Grid>
+
+            <GroupBox Grid.Row="1" Header="Alice">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="a" Grid.Column="0" Grid.Row="0"/>
+                    <TextBox Name="inputA" Grid.Column="1" Grid.Row="0" Height="auto" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Margin="5" IsReadOnly="True"/>
+
+                    <Label Content="X" Grid.Column="0" Grid.Row="1"/>
+                    <TextBox Name="inputAliceX" Grid.Column="1" Grid.Row="1" Height="auto" TextWrapping="Wrap" Text="TextBox" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="5"  IsReadOnly="True"/>
+
+                    <Label Content="got Y from Bob" Grid.Column="0" Grid.Row="2"/>
+                    <TextBox Name="inputFromBobY" Grid.Column="1" Grid.Row="2" Height="auto" TextWrapping="Wrap" Text="TextBox" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+
+                    <Label Content="got key K" Grid.Column="0" Grid.Row="3"/>
+                    <TextBox Name="inputAliceK" Grid.Column="1" Grid.Row="3" Height="auto" TextWrapping="Wrap" Text="TextBox" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="5"  IsReadOnly="True"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Row="2" Header="Bob">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="b" Grid.Column="0" Grid.Row="0"/>
+                    <TextBox Name="inputB" Grid.Column="1" Grid.Row="0" Height="auto" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Margin="5" IsReadOnly="True"/>
+
+                    <Label Content="Y" Grid.Column="0" Grid.Row="1"/>
+                    <TextBox Name="inputBobY" Grid.Column="1" Grid.Row="1" Height="auto" TextWrapping="Wrap" Text="TextBox" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="5"  IsReadOnly="True"/>
+
+                    <Label Content="got X from Alice" Grid.Column="0" Grid.Row="2"/>
+                    <TextBox Name="inputFromAliceX" Grid.Column="1" Grid.Row="2" Height="auto" TextWrapping="Wrap" Text="TextBox" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+
+                    <Label Content="got key K" Grid.Column="0" Grid.Row="3"/>
+                    <TextBox Name="inputBobK" Grid.Column="1" Grid.Row="3" Height="auto" TextWrapping="Wrap" Text="TextBox" VerticalContentAlignment="Center" VerticalAlignment="Center" Margin="5"  IsReadOnly="True"/>
+                </Grid>
+            </GroupBox>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="btnExchange" Content="ExchangeAB" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5" Width="100" Height="30" Click="BtnExchange_Click"/>
+                <Button Name="btnGetKey" Content="GetKey" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5" Width="100" Height="30" Click="BtnGetKey_Click"/>
+            </StackPanel>
+        </Grid>
+
+    </ScrollViewer>
 </Window>
