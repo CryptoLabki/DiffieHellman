@@ -13,7 +13,7 @@ namespace DiffieHellman
         public BigInteger Q { get; private set; }
         public BigInteger G { get; private set; }
 
-        private int _n = 0;
+        private BigInteger _n = 0;
 
         public CommonData()
         {
@@ -21,7 +21,9 @@ namespace DiffieHellman
 
             do
             {
-                _n += 2;
+                _n = RandomGenerator.GetNumber(700);
+                if (_n.IsEven == false) _n++;
+
                 P = _n * Q + 1;
             }
             while (PrimeTester.FullTest(P) == false);
